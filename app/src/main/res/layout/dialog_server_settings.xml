@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Server IP Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName|number"
+            android:ems="10"
+            android:id="@+id/edtDssIP"
+            android:hint="enter ip address here"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="Server Port"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName|number"
+            android:ems="10"
+            android:id="@+id/edtDssPort"
+            android:hint="enter port number here" />
+
+        <TextView
+            android:text="Scanner ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName|number|numberSigned"
+            android:ems="10"
+            android:id="@+id/edtDssScanerId"
+            android:hint="enter scanner ID here" />
+
+        <CheckBox
+            android:text="use network"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbDssUseServer" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="Apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnDssApply"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btmDssCancel"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

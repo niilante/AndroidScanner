@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AndroidScanner</string>
+    <string name="action_settings">Settings</string>
+    <string name="select_device">Select device</string>
+    <string name="connect_device">Connect</string>
+    <string name="disconnect_device">Disconnect</string>
+    <string name="waiting_data">Waiting for data...</string>
+    <string name="server_settings">Server Settings</string>
+</resources>

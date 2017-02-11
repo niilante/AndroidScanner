@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="androidscanner.ricsts.com.androidscanner.MainActivity">
+    <item
+        android:id="@+id/serverSettings"
+        android:title="@string/server_settings"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/chooseDevice"
+        android:title="@string/select_device"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/connectDevice"
+        android:title="@string/connect_device"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/disconnectDevice"
+        android:title="@string/disconnect_device"
+        app:showAsAction="never"/>
+</menu>
