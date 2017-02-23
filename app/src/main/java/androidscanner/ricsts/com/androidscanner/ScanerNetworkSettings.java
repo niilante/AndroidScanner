@@ -1,8 +1,9 @@
 package androidscanner.ricsts.com.androidscanner;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
-import android.hardware.camera2.params.StreamConfigurationMap;
+import android.speech.SpeechRecognizer;
+
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -15,6 +16,7 @@ public class ScanerNetworkSettings {
     private static final String SERVER_PORT_PARAMS_NAME = "SERVER_PORT_PARAMS_NAME";
     private static final String IS_USE_SERVER = "IS_USE_SERVER";
     private static final String SCANER_ID_PARAMS_NAME = "SCANER_ID_PARAMS_NAME";
+    private static final String PREFERENCIES_FILE_NAME = "App_Settings";
 
     private static String serverAddress = "";
     private static int serverport = -1;
@@ -23,7 +25,7 @@ public class ScanerNetworkSettings {
 
 
 
-    private static Activity activity;
+    private static Context context;
 
     public static String getScanerId() {
         return scanerId;
@@ -45,8 +47,8 @@ public class ScanerNetworkSettings {
         return serverport;
     }
 
-    public static void setContext(Activity activity) {
-        ScanerNetworkSettings.activity = activity;
+    public static void setContext(Context context) {
+        ScanerNetworkSettings.context = context;
     }
 
     public static void setServerport(int serverport) {
@@ -63,17 +65,19 @@ public class ScanerNetworkSettings {
     }
 
     public static void saveSettings(){
-        SharedPreferences sPref = activity.getPreferences(MODE_PRIVATE);
-        sPref.edit().putString(SERVER_ADDRES_PARAMS_NAME,serverAddress);
-        sPref.edit().putInt(SERVER_PORT_PARAMS_NAME,serverport);
-        sPref.edit().putBoolean(IS_USE_SERVER, useServer);
-        sPref.edit().putString(SCANER_ID_PARAMS_NAME, scanerId);
-        sPref.edit().commit();
+        SharedPreferences sPref = context.getSharedPreferences(PREFERENCIES_FILE_NAME,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sPref.edit();
+        editor.putString(SERVER_ADDRES_PARAMS_NAME,serverAddress);
+        editor.putInt(SERVER_PORT_PARAMS_NAME,serverport);
+        editor.putBoolean(IS_USE_SERVER, useServer);
+        editor.putString(SCANER_ID_PARAMS_NAME, scanerId);
+        editor.commit();
+
 
     }
 
     public static void loadSettings(){
-        SharedPreferences sPref = activity.getPreferences(MODE_PRIVATE);
+        SharedPreferences sPref = context.getSharedPreferences(PREFERENCIES_FILE_NAME,MODE_PRIVATE);
         serverAddress = sPref.getString(SERVER_ADDRES_PARAMS_NAME,"");
         serverport = sPref.getInt(SERVER_PORT_PARAMS_NAME,-1);
         useServer = sPref.getBoolean(IS_USE_SERVER, false);

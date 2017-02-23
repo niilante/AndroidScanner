@@ -59,6 +59,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/cbDssUseServer" />
 
+        <Button
+            android:text="Send test message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDssTestNetwork" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
